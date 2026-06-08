@@ -1,0 +1,62 @@
+interface LogoProps {
+  size?: 'sm' | 'md' | 'lg'
+  className?: string
+}
+
+const sizes = {
+  sm: 'w-6 h-6',
+  md: 'w-8 h-8',
+  lg: 'w-12 h-12',
+}
+
+export default function Logo({ size = 'md', className = '' }: LogoProps) {
+  return (
+    <div className={`${sizes[size]} ${className}`}>
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="24" fill="url(#gradient)" />
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#ffffff" stopOpacity="0.12" />
+            <stop offset="1" stopColor="#ffffff" stopOpacity="0.04" />
+          </linearGradient>
+        </defs>
+
+        <path d="M30 50 L50 35 L70 50 L50 65 L30 50Z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round" />
+
+        <path d="M50 35 L50 65" stroke="white" strokeWidth="2" strokeLinecap="round" />
+
+        <path d="M35 42 L65 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 4" opacity="0.5" />
+        <path d="M35 58 L65 42" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 4" opacity="0.5" />
+
+        <circle cx="50" cy="38" r="2.5" fill="white" />
+        <circle cx="50" cy="62" r="2.5" fill="white" />
+        <circle cx="35" cy="50" r="2" fill="white" opacity="0.6" />
+        <circle cx="65" cy="50" r="2" fill="white" opacity="0.6" />
+
+        <path d="M30 50 L20 50" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M70 50 L80 50" stroke="white" strokeWidth="2" strokeLinecap="round" />
+
+        <path d="M20 50 L18 48" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M20 50 L18 52" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+
+        <path d="M80 50 L82 48" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M80 50 L82 52" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+
+        <path d="M50 20 L50 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M50 80 L50 85" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+
+        <path d="M46 18 L44 14" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+        <path d="M54 18 L56 14" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+        <path d="M46 82 L44 86" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+        <path d="M54 82 L56 86" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+
+        <path d="M24 35 L20 32" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
+        <path d="M76 35 L80 32" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
+        <path d="M24 65 L20 68" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
+        <path d="M76 65 L80 68" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
+
+        <circle cx="50" cy="50" r="48" stroke="white" strokeWidth="0.5" strokeOpacity="0.08" fill="none" strokeDasharray="2 6" />
+      </svg>
+    </div>
+  )
+}

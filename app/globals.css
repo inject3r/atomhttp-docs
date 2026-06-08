@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+@layer base {
+  body {
+    @apply bg-black text-gray-200;
+  }
+}
+
+@layer components {
+  .code-block {
+    @apply bg-[#0a0a0a] border border-[#1f1f1f] rounded-xl overflow-hidden;
+  }
+  
+  .doc-card {
+    @apply border border-[#1a1a1a] rounded-xl p-6 transition-all duration-200 hover:border-[#2a2a2a];
+  }
+  
+  .table-wrapper {
+    @apply overflow-x-auto rounded-xl border border-[#1a1a1a];
+  }
+  
+  .table-wrapper table {
+    @apply w-full border-collapse;
+  }
+  
+  .table-wrapper th {
+    @apply text-left px-4 py-3 bg-[#0a0a0a] font-semibold border-b border-[#1f1f1f];
+  }
+  
+  .table-wrapper td {
+    @apply px-4 py-3 border-b border-[#141414];
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast-message {
+  animation: slideIn 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
