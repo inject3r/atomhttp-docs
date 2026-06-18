@@ -257,6 +257,18 @@ const configOptions = [
   ],
   ["keepAlive", "bool", "True", "Enable HTTP keep-alive connections"],
   [
+    "verify",
+    "bool",
+    "True",
+    "Enable SSL certificate verification for HTTPS requests",
+  ],
+  [
+    "retryConfig",
+    "dict",
+    "None",
+    "Retry settings for transient failures: max_retries, backoff_factor, status_forcelist",
+  ],
+  [
     "decompress",
     "bool",
     "True",
@@ -471,7 +483,13 @@ print(f"URL: {response.config.url}")`}
     'headers': {'X-API-Key': 'your-api-key', 'Accept': 'application/json'},
     'maxRedirects': 3,
     'responseType': 'json',
-    'keepAlive': True
+    'keepAlive': True,
+    'verify': True,
+    'retryConfig': {
+        'max_retries': 3,
+        'backoff_factor': 0.3,
+        'status_forcelist': [408, 429, 500, 502, 503, 504]
+    }
 })
 
 # All requests use these defaults

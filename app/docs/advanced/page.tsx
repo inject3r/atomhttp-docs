@@ -330,6 +330,18 @@ const limitsData = {
       "Enable HTTP keep-alive connections for connection reuse",
     ],
     [
+      "verify",
+      "bool",
+      "True",
+      "Enable SSL certificate verification for HTTPS requests",
+    ],
+    [
+      "retryConfig",
+      "dict",
+      "None",
+      "Retry settings for transient errors and server retries",
+    ],
+    [
       "socketPath",
       "str",
       "None",

@@ -5,5 +5,5 @@ export type ProjectType = {
 
 export const Project: ProjectType = {
   name: "AtomHTTP",
-  version: "1.0",
+  version: "1.2.2",
 };

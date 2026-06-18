@@ -25,19 +25,16 @@ const installationOptions = [
 const quickStartExamples = [
   {
     title: "Basic GET request",
-    desc: "Simple request to fetch a single resource",
+    desc: "Simple request to fetch a single resource with automatic cleanup",
     code: `import asyncio
 from atomhttp import AtomHTTP
 
 async def main():
-    client = AtomHTTP()
-    
-    response = await client.get('https://jsonplaceholder.typicode.com/posts/1')
-    print(f"Status: {response.status}")
-    print(f"Title: {response.data['title']}")
-    print(f"User ID: {response.data['userId']}")
-    
-    await client.close()
+    async with AtomHTTP() as client:
+        response = await client.get('https://jsonplaceholder.typicode.com/posts/1')
+        print(f"Status: {response.status}")
+        print(f"Title: {response.data['title']}")
+        print(f"User ID: {response.data['userId']}")
 
 asyncio.run(main())`,
   },
