@@ -46,3 +46,7 @@ public/rss.xml
 
 # worktrees
 .worktrees/
+
+# package lock
+
+package-lock.json
